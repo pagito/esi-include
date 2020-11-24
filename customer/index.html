@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Customer App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+</head>
+  <body>
+    <main id="app">
+      <h1 id="store">Customer app content</h1>
+      <div id="options">
+        <button class="active" type="button">
+          <img src="img/bl.jpg" alt="BTC">
+        </button>
+      </div>
+      <button id="eth" type="button">Subscribe to ETH</button>
+      <button id="wallet" type="button">Subscribe to Wallet</button>
+
+      <h2>Subscribed MicroServices</h2>
+      <hr>
+
+      <div class="ms-content">
+        
+      </div>
+      <esi:include src="http://localhost:8050/eth.html"></esi:include>
+      <esi:include src="http://localhost:8050/wallet.html"></esi:include>
+    </main>
+
+    <!-- <script type="text/javascript">
+      fetch('api.js')
+      .then(response => response.json())
+      .then(data => console.log(data));
+    </script> -->
+  </body>
+</html>
