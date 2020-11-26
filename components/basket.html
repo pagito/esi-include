@@ -1,0 +1,9 @@
+<hr>
+<h3>Basket item counter is injected</h3>
+<div id="basket">basket 0 item(s)</div>
+<hr>
+<script type="text/javascript">
+	window.addEventListener('updateCart', (evt) => {
+		document.getElementById('basket').innerText = `basket ${evt.detail.cartCnt} item(s)`;
+	})
+</script>

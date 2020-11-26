@@ -10,21 +10,21 @@
     <main id="app">
       <h1 id="store">Customer app content</h1>
       <div id="options">
-        <button class="active" type="button">
-          <img src="img/bl.jpg" alt="BTC">
-        </button>
+        <img src="img/bl.jpg" alt="BTC">
+        <esi:include src="http://localhost:8050/basket.html"></esi:include>
+        <button class="active" type="button" id="buy">Buy button is on customer page</button>
       </div>
-      <button id="eth" type="button">Subscribe to ETH</button>
-      <button id="wallet" type="button">Subscribe to Wallet</button>
+      <!-- <button id="eth" type="button">Subscribe to ETH</button>
+      <button id="wallet" type="button">Subscribe to Wallet</button> -->
 
-      <h2>Subscribed MicroServices</h2>
+      <h2>Subscribed MicroServices are injected</h2>
       <hr>
 
       <div class="ms-content">
-        
+        <esi:include src="http://localhost:8050/eth.html"></esi:include>
+        <esi:include src="http://localhost:8050/wallet.html"></esi:include>        
       </div>
-      <esi:include src="http://localhost:8050/eth.html"></esi:include>
-      <esi:include src="http://localhost:8050/wallet.html"></esi:include>
+
     </main>
 
     <!-- <script type="text/javascript">
@@ -32,5 +32,16 @@
       .then(response => response.json())
       .then(data => console.log(data));
     </script> -->
+    <script type="text/javascript">
+      let cartCnt = 0;
+      document.getElementById('buy').addEventListener('click', () => {
+        cartCnt += 1;
+        window.dispatchEvent(new CustomEvent('updateCart', {
+          detail: {
+            cartCnt,
+          }
+        }))
+      })
+    </script>
   </body>
 </html>
