@@ -2,3 +2,10 @@ diagram.jpg
 diagram.drawio
 /proxy/node_modules
 /proxy/package-lock.json
+/customerApp/node_modules
+/customerApp/vendor
+/customerApp/composer.lock
+/customerApp/package-lock.json
+/customerApp/public/js
+/customerApp/public/css/app.css
+/customerApp/public/mix-manifest.json
